@@ -1,17 +1,43 @@
 public class MainStart {
     public static void main(String[] args) {
-        PaperBook HeadFirstJava = new PaperBook("ABC", "Head First Java", 2003, "Ahmed", 100, 79.99);
-        EBook AtomicHabits = new EBook("AHG", "Atomic Habits", 2010, "Mohamed", 99.99, FileType.PDF);
-        DemoBook DesignPatternDemo = new DemoBook("PSA", "Design Patterns", 1960, "Abdo");
         Inventory inventory = new Inventory();
-        inventory.add(AtomicHabits);
-        inventory.add(HeadFirstJava);
-        inventory.add(DesignPatternDemo);
-        System.out.println(inventory.getBooks());
-        System.out.println(inventory.removeAndGetOutdatedBooks());
-        System.out.println(inventory.getBooks());
-        HeadFirstJava.buy(100, "123 Main St, Anytown, USA");
-        System.out.println(inventory.getBooks());
 
+        // Add books
+        PaperBook paperBook = new PaperBook("123", "Java Basics", 2010, "Alice", 10, 50.0);
+        EBook eBook = new EBook("456", "AI for All", 2015, "Bob", 30.0, FileType.PDF);
+        DemoBook demoBook = new DemoBook("789", "Sample Book", 1960, "Carol");
+
+        inventory.add(paperBook);
+        inventory.add(eBook);
+        inventory.add(demoBook);
+
+        // Buy PaperBook
+        try {
+            double paid = paperBook.buy(2, "123 Main St");
+            System.out.printf("Bought 2 PaperBooks, paid: %.2f\n", paid);
+        } catch (Exception e) {
+            System.out.println("Error buying PaperBook: " + e.getMessage());
+        }
+
+        // Buy EBook
+        try {
+            double paid = eBook.buy(1, "user@email.com");
+            System.out.printf("Bought 1 EBook, paid: %.2f\n", paid);
+        } catch (Exception e) {
+            System.out.println("Error buying EBook: " + e.getMessage());
+        }
+
+        // Try to buy DemoBook
+        try {
+            demoBook.buy(1, "irrelevant");
+        } catch (Exception e) {
+            System.out.println("Error buying DemoBook (expected): " + e.getMessage());
+        }
+
+        // Remove outdated books
+        System.out.println("Outdated books removed:");
+        for (Book b : inventory.removeAndGetOutdatedBooks()) {
+            System.out.println("Removed: " + b.getTitle() + " (" + b.getYearOfPublish() + ")");
+        }
     }
 }
