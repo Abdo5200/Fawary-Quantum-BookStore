@@ -49,3 +49,5 @@ To add a new product type:
 1. Implement the `Product` interface.
 2. Add your product to the inventory using the `add` method.
 
+##Sample Output
+![image](https://github.com/user-attachments/assets/3a21aa41-707f-4006-9c33-09f4ad460305)
