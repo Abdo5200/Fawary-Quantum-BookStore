@@ -52,4 +52,3 @@ To add a new product type:
 ## Notes
 
 - All business logic is handled via polymorphism for easy extensibility.
-- Print statement prefix requirement was intentionally skipped as per user decision.
