@@ -49,6 +49,3 @@ To add a new product type:
 1. Implement the `Product` interface.
 2. Add your product to the inventory using the `add` method.
 
-## Notes
-
-- All business logic is handled via polymorphism for easy extensibility.
