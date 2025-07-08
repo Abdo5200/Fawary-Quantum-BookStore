@@ -49,5 +49,19 @@ To add a new product type:
 1. Implement the `Product` interface.
 2. Add your product to the inventory using the `add` method.
 
-##Sample Output  
+## Testing and running  
+### Intialize and Add new Books  
+
+![image](https://github.com/user-attachments/assets/71297a45-398e-41fc-9801-bde6ec525374)
+
+### Buying Different kinds of Books  
+
+![image](https://github.com/user-attachments/assets/d85a661e-976d-4782-99c7-4df54f1be3f4)
+
+### Removing outdated Books and printing them  
+
+![image](https://github.com/user-attachments/assets/11e31acb-21f3-4fdd-9f55-e95ce5637739)
+
+### Sample output  
+
 ![image](https://github.com/user-attachments/assets/3a21aa41-707f-4006-9c33-09f4ad460305)
